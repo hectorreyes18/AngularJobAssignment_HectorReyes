@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: black;
+    color: white; /* Cambia el color del texto si es necesario para que sea legible en fondo negro */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
+ul.dropdown-content.select-dropdown li:not(.disabled) span {  color: black; }
+
+.select-wrapper input.select-dropdown{
+    color: white;
+}
+
+.select-wrapper .caret{
+    fill: white;
+}

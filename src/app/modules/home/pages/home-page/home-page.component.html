@@ -1,0 +1,67 @@
+<div class="slider">
+  <ul class="slides black">
+    <li>
+      <div class="row">
+        <div class="col s6 m6 l6 caption right-align">
+          <h3>{{slider[0]?.title}}</h3>
+          <h5 class="light grey-text text-lighten-3">{{slider[0].description}}</h5>
+        </div>
+        <div>
+          <img class="col s6 m6 l6 right-align degradado-lateral" width="100%" src="assets/1.png">
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="row">
+        <div class="col s6 m6 l6 caption right-align">
+          <h3>{{slider[1].title}}</h3>
+          <h5 class="light grey-text text-lighten-3">{{slider[1].description}}</h5>
+        </div>
+        <div>
+          <img class="col s6 m6 l6 right-align degradado-lateral" width="100%" [src]="this.getImage(2)">
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <div class="row">
+        <div class="col s6 m6 l6 caption right-align">
+          <h3>{{slider[2].title}}</h3>
+          <h5 class="light grey-text text-lighten-3">{{slider[2].description}}</h5>
+        </div>
+        <div>
+          <img class="col s6 m6 l6 right-align degradado-lateral" width="100%" [src]="this.getImage(3)">
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="row">
+  <div class="input-field col s12 m3 l3 offset-m2 offset-l2" style=" margin-bottom: 0px;">
+    <select [(ngModel)]="sort" (change)="sortMovies()">
+      <option [value]="1">Title</option>
+      <option [value]="2">Release date</option>
+    </select>
+    <label style="color: white !important">Sort by</label>
+  </div>
+</div>
+
+<div class="row" style="padding-left: 20px; padding-right: 20px;">
+  <aside class="col s12 m3 l2 black">
+    <div class="collection ">
+      <a class="collection-item black " [ngClass]="{'active':movieSelected==='all'}"
+        (click)="movieSelected='all';filterMovies('all')">All</a>
+      <a class="collection-item black" [ngClass]="{'active':movieSelected===gen}" *ngFor="let gen of genres"
+        (click)="filterMovies(gen)">{{gen}}</a>
+    </div>
+  </aside>
+
+  <div class="col s12 m9 l10">
+    <div class="row">
+      <hr>
+      <app-movie-card class="col s12 m4 l4" *ngFor="let movie of movies" [value]="movie"></app-movie-card>
+    </div>
+
+  </div>
+</div>

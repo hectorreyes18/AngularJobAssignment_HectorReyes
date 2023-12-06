@@ -1,0 +1,8 @@
+.degradado-lateral {
+    mask-image: linear-gradient(to right, transparent, black 50%, black 50%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 50%, black 50%, transparent);
+  }
+
+  .collection{
+    cursor: pointer;
+  }

@@ -1,0 +1,10 @@
+<div class="card black">
+  <div class="card-content card-movie">
+    <img style=" width: 100%; max-height: 450px;" [src]="this.imagen" class="tooltipped" data-position="right"
+      data-html="true" [attr.data-tooltip]="getInfo()" (click)="details()">
+    <a *ngIf="!onList" class="waves-effect waves-light btn button-add" (click)="addWatchList()"><i
+        class="material-icons left">add</i>Add to Watchlist</a>
+    <a *ngIf="onList" class="waves-effect waves-light btn button-add" (click)="addWatchList()"><i
+        class="material-icons left">check</i>On my watchlist</a>
+  </div>
+</div>
